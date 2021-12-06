@@ -1,5 +1,6 @@
 * [Day 1] Sonar Sweep
- 
+** Org mode :noexport:
+   This is written in literate programming with org-babel and ruby. Reading this file won't help you to understand quickly. Please refers to the generated markdown file 
 ** Increment counter
 #+NAME: increment_counter
 #+BEGIN_SRC ruby :session  
