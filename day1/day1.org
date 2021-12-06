@@ -1,5 +1,7 @@
 * Sonar Sweep  
   [[https://adventofcode.com/2021/day/1][Day 1]]
+  [[Part One][Part One]]
+  [[Part Two][Part Two]]
 ** Part One
 *** Test data
    
@@ -8,11 +10,11 @@
       File.readlines("test.txt").map(&:to_i).each_cons(2) do |first_num, second_num|
         increase_count += 1 if second_num > first_num
       end
-      "Result :tada: #{increase_count}"
+      "Result: #{increase_count}"
     #+END_SRC
 
     #+RESULTS:
-    : Result :tada: 7
+    : Result: 7
 
 *** Input data 
     #+BEGIN_SRC ruby :exports both
@@ -20,10 +22,10 @@
       File.readlines("input.txt").map(&:to_i).each_cons(2) do |first_num, second_num|
         increase_count += 1 if second_num > first_num
       end
-      "Result :tada: #{increase_count}"
+      "Result: #{increase_count}"
     #+END_SRC
 
     #+RESULTS:
-    : Result :tada: 1226
+    : Result: 1226
     
 ** Part Two
