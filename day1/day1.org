@@ -1,8 +1,5 @@
-* [Day 1] Sonar Sweep  
-
-*** [[part-one][Part One]]
-*** [[part-two][Part Two]]
-
+* [Day 1] Sonar Sweep
+ 
 ** Increment counter
 #+NAME: increment_counter
 #+BEGIN_SRC ruby :session  
