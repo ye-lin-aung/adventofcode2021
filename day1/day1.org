@@ -3,7 +3,7 @@
 ** Part One
 *** Test data
    
-    #+BEGIN_SRC ruby
+    #+BEGIN_SRC ruby :exports both
       increase_count = 0
       File.readlines("test.txt").map(&:to_i).each_cons(2) do |first_num, second_num|
         increase_count += 1 if second_num > first_num
@@ -14,8 +14,8 @@
     #+RESULTS:
     : 7
 
-*** Input data
-    #+BEGIN_SRC ruby
+*** Input data 
+    #+BEGIN_SRC ruby :exports both
       increase_count = 0
       File.readlines("input.txt").map(&:to_i).each_cons(2) do |first_num, second_num|
         increase_count += 1 if second_num > first_num
