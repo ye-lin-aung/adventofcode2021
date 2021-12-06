@@ -2,28 +2,39 @@
 
 *** [[part-one][Part One]]
 *** [[part-two][Part Two]]
-    
+
+** Increment counter
+#+NAME: increment_counter
+#+BEGIN_SRC ruby :session  
+  def increment_counter(array)
+   count = 0
+   array.each_cons(2) do |first, second|
+     count += 1 if second > first
+   end
+   count
+  end
+#+END_SRC
+
+#+RESULTS: increment_counter
+: :increment_counter
+
 ** Part One
 *** Test data
    
-    #+BEGIN_SRC ruby :exports both
-      increase_count = 0
-      File.readlines("test.txt").map(&:to_i).each_cons(2) do |first_num, second_num|
-        increase_count += 1 if second_num > first_num
-      end
-      "Result: #{increase_count}"
+    #+BEGIN_SRC ruby :exports both  :noweb yes 
+      input = File.readlines("test.txt").map(&:to_i)
+      <<increment_counter>>
+      "Result: #{increment_counter(input)}"
     #+END_SRC
 
     #+RESULTS:
     : Result: 7
 
 *** Input data 
-    #+BEGIN_SRC ruby :exports both
-      increase_count = 0
-      File.readlines("input.txt").map(&:to_i).each_cons(2) do |first_num, second_num|
-        increase_count += 1 if second_num > first_num
-      end
-      "Result: #{increase_count}"
+    #+BEGIN_SRC ruby :exports both :noweb yes
+      input = File.readlines("input.txt").map(&:to_i)
+      <<increment_counter>>
+      "Result: #{increment_counter(input)}"
     #+END_SRC
 
     #+RESULTS:
@@ -31,31 +42,25 @@
     
 ** Part Two
 *** Test data
-   #+BEGIN_SRC ruby :exports both
+   #+BEGIN_SRC ruby :exports both :noweb yes
      sum_array = []
-     count = 0
      File.readlines("test.txt").map(&:to_i).each_cons(3) do |first_num, second_num, third_num|
         sum_array << first_num + second_num + third_num
      end
-     sum_array.each_cons(2) do |first_num, second_num|
-       count += 1 if second_num > first_num
-     end
-     "Result: #{count}"
+      <<increment_counter>>
+     "Result: #{increment_counter(sum_array)}"
    #+END_SRC
 
    #+RESULTS:
    : Result: 5
 *** Input data   
-   #+BEGIN_SRC ruby :exports both
+   #+BEGIN_SRC ruby :exports both :noweb yes
      sum_array = []
-     count = 0
      File.readlines("input.txt").map(&:to_i).each_cons(3) do |first_num, second_num, third_num|
         sum_array << first_num + second_num + third_num
      end
-     sum_array.each_cons(2) do |first_num, second_num|
-       count += 1 if second_num > first_num
-     end
-     "Result: #{count}"
+      <<increment_counter>>
+     "Result: #{increment_counter(sum_array)}"
    #+END_SRC
 
    #+RESULTS:
