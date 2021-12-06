@@ -5,11 +5,7 @@
 #+NAME: increment_counter
 #+BEGIN_SRC ruby :session  
   def increment_counter(array)
-   count = 0
-   array.each_cons(2) do |first, second|
-     count += 1 if second > first
-   end
-   count
+   array.each_cons(2).select{ |first, second| second > first }.map{ 1 }.sum
   end
 #+END_SRC
 
