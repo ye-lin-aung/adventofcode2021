@@ -2,23 +2,12 @@
 ** Org mode :noexport:
    This is written in literate programming with org-babel and ruby. Reading this file won't help you to understand quickly. Please refers to the generated markdown file 
 ** Increment counter
-#+NAME: increment_counter
-#+BEGIN_SRC ruby :session  
-  def increment_counter(array)
-   array.each_cons(2).select{ |first, second| second > first }.map{ 1 }.sum
-  end
-#+END_SRC
-
-#+RESULTS: increment_counter
-: :increment_counter
 
 ** Part One
 *** Test data
    
     #+BEGIN_SRC ruby :exports both  :noweb yes
-      <<increment_counter>>
-      input = File.readlines("test.txt").map(&:to_i)      
-      "Result: #{increment_counter(input)}"
+      "Result: #{File.readlines('test.txt').map(&:to_i).each_cons(2).select{ |first, second| second > first }.map{ 1 }.sum}"
     #+END_SRC
 
     #+RESULTS:
@@ -26,9 +15,7 @@
 
 *** Input data 
     #+BEGIN_SRC ruby :exports both :noweb yes
-      <<increment_counter>>
-      input = File.readlines("input.txt").map(&:to_i)      
-      "Result: #{increment_counter(input)}"
+      "Result: #{File.readlines('input.txt').map(&:to_i).each_cons(2).select{ |first, second| second > first }.map{ 1 }.sum}"
     #+END_SRC
 
     #+RESULTS:
@@ -37,24 +24,18 @@
 ** Part Two
 *** Test data
    #+BEGIN_SRC ruby :exports both :noweb yes
-     <<increment_counter>>
-     sum_array = []
-     File.readlines("test.txt").map(&:to_i).each_cons(3) do |first_num, second_num, third_num|
-        sum_array << first_num + second_num + third_num
-     end
-     "Result: #{increment_counter(sum_array)}"
+     "Result: #{File.readlines('test.txt').map(&:to_i).each_cons(3).map do |first_num, second_num, third_num|
+        first_num + second_num + third_num
+     end.each_cons(2).select{ |first, second| second > first }.map{ 1 }.sum}"
    #+END_SRC
 
    #+RESULTS:
    : Result: 5
 *** Input data   
    #+BEGIN_SRC ruby :exports both :noweb yes
-     <<increment_counter>>
-     sum_array = []
-     File.readlines("input.txt").map(&:to_i).each_cons(3) do |first_num, second_num, third_num|
-        sum_array << first_num + second_num + third_num
-     end     
-     "Result: #{increment_counter(sum_array)}"
+     "Result: #{File.readlines('input.txt').map(&:to_i).each_cons(3).map do |first_num, second_num, third_num|
+        first_num + second_num + third_num
+     end.each_cons(2).select{ |first, second| second > first }.map{ 1 }.sum}"
    #+END_SRC
 
    #+RESULTS:
