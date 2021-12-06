@@ -12,7 +12,7 @@
     #+END_SRC
 
     #+RESULTS:
-    : 7
+    : Result :tada: 7
 
 *** Input data 
     #+BEGIN_SRC ruby :exports both
@@ -24,6 +24,6 @@
     #+END_SRC
 
     #+RESULTS:
-    : 1226
+    : Result :tada: 1226
     
 ** Part Two
