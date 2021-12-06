@@ -1,0 +1,29 @@
+* Sonar Sweep  
+  [[https://adventofcode.com/2021/day/1][Day 1]]
+** Part One
+*** Test data
+   
+    #+BEGIN_SRC ruby
+      increase_count = 0
+      File.readlines("test.txt").map(&:to_i).each_cons(2) do |first_num, second_num|
+        increase_count += 1 if second_num > first_num
+      end
+      increase_count
+    #+END_SRC
+
+    #+RESULTS:
+    : 7
+
+*** Input data
+    #+BEGIN_SRC ruby
+      increase_count = 0
+      File.readlines("input.txt").map(&:to_i).each_cons(2) do |first_num, second_num|
+        increase_count += 1 if second_num > first_num
+      end
+      increase_count
+    #+END_SRC
+
+    #+RESULTS:
+    : 1226
+    
+** Part Two

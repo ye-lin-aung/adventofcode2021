@@ -1,0 +1,3 @@
+* Advent of code
+This is my solutions for Advent of code 2021
+This was written in ruby with org-babel. 
