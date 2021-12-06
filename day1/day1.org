@@ -8,7 +8,7 @@
       File.readlines("test.txt").map(&:to_i).each_cons(2) do |first_num, second_num|
         increase_count += 1 if second_num > first_num
       end
-      increase_count
+      "Result :tada: #{increase_count}"
     #+END_SRC
 
     #+RESULTS:
@@ -20,7 +20,7 @@
       File.readlines("input.txt").map(&:to_i).each_cons(2) do |first_num, second_num|
         increase_count += 1 if second_num > first_num
       end
-      increase_count
+      "Result :tada: #{increase_count}"
     #+END_SRC
 
     #+RESULTS:
