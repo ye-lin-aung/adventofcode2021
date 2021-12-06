@@ -18,9 +18,9 @@
 ** Part One
 *** Test data
    
-    #+BEGIN_SRC ruby :exports both  :noweb yes 
-      input = File.readlines("test.txt").map(&:to_i)
+    #+BEGIN_SRC ruby :exports both  :noweb yes
       <<increment_counter>>
+      input = File.readlines("test.txt").map(&:to_i)      
       "Result: #{increment_counter(input)}"
     #+END_SRC
 
@@ -29,8 +29,8 @@
 
 *** Input data 
     #+BEGIN_SRC ruby :exports both :noweb yes
-      input = File.readlines("input.txt").map(&:to_i)
       <<increment_counter>>
+      input = File.readlines("input.txt").map(&:to_i)      
       "Result: #{increment_counter(input)}"
     #+END_SRC
 
@@ -40,11 +40,11 @@
 ** Part Two
 *** Test data
    #+BEGIN_SRC ruby :exports both :noweb yes
+     <<increment_counter>>
      sum_array = []
      File.readlines("test.txt").map(&:to_i).each_cons(3) do |first_num, second_num, third_num|
         sum_array << first_num + second_num + third_num
      end
-      <<increment_counter>>
      "Result: #{increment_counter(sum_array)}"
    #+END_SRC
 
@@ -52,11 +52,11 @@
    : Result: 5
 *** Input data   
    #+BEGIN_SRC ruby :exports both :noweb yes
+     <<increment_counter>>
      sum_array = []
      File.readlines("input.txt").map(&:to_i).each_cons(3) do |first_num, second_num, third_num|
         sum_array << first_num + second_num + third_num
-     end
-      <<increment_counter>>
+     end     
      "Result: #{increment_counter(sum_array)}"
    #+END_SRC
 

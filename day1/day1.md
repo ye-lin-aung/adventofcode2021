@@ -1,19 +1,19 @@
-- [[Day 1] Sonar Sweep](#orgae0d909)
-  - [Increment counter](#org03b00ac)
-  - [Part One](#orgc9d5ab5)
-    - [Test data](#org9eda41e)
-    - [Input data](#org507c950)
-  - [Part Two](#org74decad)
-    - [Test data](#orga61b497)
-    - [Input data](#org6076558)
+- [[Day 1] Sonar Sweep](#orge7becb2)
+  - [Increment counter](#org657af84)
+  - [Part One](#org177c276)
+    - [Test data](#orgc3cea79)
+    - [Input data](#org7998b42)
+  - [Part Two](#org0537c1e)
+    - [Test data](#orgbae1ff6)
+    - [Input data](#orgc63da5b)
 
 
-<a id="orgae0d909"></a>
+<a id="orge7becb2"></a>
 
 # [Day 1] Sonar Sweep
 
 
-<a id="org03b00ac"></a>
+<a id="org657af84"></a>
 
 ## Increment counter
 
@@ -28,17 +28,16 @@ end
 ```
 
 
-<a id="orgc9d5ab5"></a>
+<a id="org177c276"></a>
 
 ## Part One
 
 
-<a id="org9eda41e"></a>
+<a id="orgc3cea79"></a>
 
 ### Test data
 
 ```ruby
-input = File.readlines("test.txt").map(&:to_i)
 def increment_counter(array)
  count = 0
  array.each_cons(2) do |first, second|
@@ -46,18 +45,18 @@ def increment_counter(array)
  end
  count
 end
+input = File.readlines("test.txt").map(&:to_i)      
 "Result: #{increment_counter(input)}"
 ```
 
     Result: 7
 
 
-<a id="org507c950"></a>
+<a id="org7998b42"></a>
 
 ### Input data
 
 ```ruby
-input = File.readlines("input.txt").map(&:to_i)
 def increment_counter(array)
  count = 0
  array.each_cons(2) do |first, second|
@@ -65,55 +64,56 @@ def increment_counter(array)
  end
  count
 end
+input = File.readlines("input.txt").map(&:to_i)      
 "Result: #{increment_counter(input)}"
 ```
 
     Result: 1226
 
 
-<a id="org74decad"></a>
+<a id="org0537c1e"></a>
 
 ## Part Two
 
 
-<a id="orga61b497"></a>
+<a id="orgbae1ff6"></a>
 
 ### Test data
 
 ```ruby
+def increment_counter(array)
+ count = 0
+ array.each_cons(2) do |first, second|
+   count += 1 if second > first
+ end
+ count
+end
 sum_array = []
 File.readlines("test.txt").map(&:to_i).each_cons(3) do |first_num, second_num, third_num|
    sum_array << first_num + second_num + third_num
 end
- def increment_counter(array)
-  count = 0
-  array.each_cons(2) do |first, second|
-    count += 1 if second > first
-  end
-  count
- end
 "Result: #{increment_counter(sum_array)}"
 ```
 
     Result: 5
 
 
-<a id="org6076558"></a>
+<a id="orgc63da5b"></a>
 
 ### Input data
 
 ```ruby
+def increment_counter(array)
+ count = 0
+ array.each_cons(2) do |first, second|
+   count += 1 if second > first
+ end
+ count
+end
 sum_array = []
 File.readlines("input.txt").map(&:to_i).each_cons(3) do |first_num, second_num, third_num|
    sum_array << first_num + second_num + third_num
-end
- def increment_counter(array)
-  count = 0
-  array.each_cons(2) do |first, second|
-    count += 1 if second > first
-  end
-  count
- end
+end     
 "Result: #{increment_counter(sum_array)}"
 ```
 
