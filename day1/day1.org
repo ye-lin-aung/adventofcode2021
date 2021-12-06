@@ -1,5 +1,4 @@
-* Sonar Sweep  
-  [[https://adventofcode.com/2021/day/1][Day 1]]
+* [Day 1] Sonar Sweep  
 
 *** [[part-one][Part One]]
 *** [[part-two][Part Two]]
@@ -31,3 +30,33 @@
     : Result: 1226
     
 ** Part Two
+*** Test data
+   #+BEGIN_SRC ruby :exports both
+     sum_array = []
+     count = 0
+     File.readlines("test.txt").map(&:to_i).each_cons(3) do |first_num, second_num, third_num|
+        sum_array << first_num + second_num + third_num
+     end
+     sum_array.each_cons(2) do |first_num, second_num|
+       count += 1 if second_num > first_num
+     end
+     "Result: #{count}"
+   #+END_SRC
+
+   #+RESULTS:
+   : Result: 5
+*** Input data   
+   #+BEGIN_SRC ruby :exports both
+     sum_array = []
+     count = 0
+     File.readlines("input.txt").map(&:to_i).each_cons(3) do |first_num, second_num, third_num|
+        sum_array << first_num + second_num + third_num
+     end
+     sum_array.each_cons(2) do |first_num, second_num|
+       count += 1 if second_num > first_num
+     end
+     "Result: #{count}"
+   #+END_SRC
+
+   #+RESULTS:
+   : Result: 1252
