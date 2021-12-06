@@ -1,7 +1,9 @@
 * Sonar Sweep  
   [[https://adventofcode.com/2021/day/1][Day 1]]
-  [[Part One][Part One]]
-  [[Part Two][Part Two]]
+
+*** [[part-one][Part One]]
+*** [[part-two][Part Two]]
+    
 ** Part One
 *** Test data
    
