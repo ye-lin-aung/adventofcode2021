@@ -4,15 +4,15 @@
    
 ** Part one
 *** Test data
-    
+
 #+begin_src ruby :exports both  :noweb yes
-  File.readlines("test.txt").group_by{ |x| (x.include?("up") || x.include?("down")) }.values.map{ |x| x.map{ |x|
-                                                                              if x.include?("up")
-                                                                                -(x[/\d+/].to_i)
-                                                                              else
-                                                                                x[/\d+/].to_i
-                                                                              end
-                                                                             }.sum }.inject(:*)
+    File.readlines("test.txt").group_by{ |x| (x.include?("up") || x.include?("down")) }.values.map{ |x| x.map{ |x|
+                                                                                if x.include?("up")
+                                                                                  -(x[/\d+/].to_i)
+                                                                                else
+                                                                                  x[/\d+/].to_i
+                                                                                end
+                                                                               }.sum }.inject(:*)
 #+end_src
 
 #+RESULTS:
@@ -20,7 +20,7 @@
 
 *** Input data 
 #+begin_src ruby :exports both  :noweb yes
-  File.readlines("input.txt").group_by{ |x| (x.include?("up") || x.include?("down")) }.values.map{ |x| x.map{ |x|
+    File.readlines("input.txt").group_by{ |x| (x.include?("up") || x.include?("down")) }.values.map{ |x| x.map{ |x|
                                                                               if x.include?("up")
                                                                                 -(x[/\d+/].to_i)
                                                                               else
@@ -34,3 +34,37 @@
 
 ** Part two
 *** Test data
+ #+begin_src ruby :exports both :noweb yes
+    File.readlines("test.txt").map do |x|
+      if x.include? "forward"
+        $horizontal = ($horizontal || 0) + x[/\d+/].to_i
+        $depth ||= 0 
+        $depth += ($aim || 0) * x[/\d+/].to_i
+      elsif x.include? "down"
+        $aim = ($aim || 0) + x[/\d+/].to_i
+      else
+        $aim = ($aim || 0) - x[/\d+/].to_i
+      end
+    end.map { |x| $horizontal * $depth }.first
+#+end_src                                                                              
+
+#+RESULTS:
+: 900
+
+*** Input data
+ #+begin_src ruby :exports both :noweb yes
+    File.readlines("input.txt").map do |x|
+      if x.include? "forward"
+        $horizontal = ($horizontal || 0) + x[/\d+/].to_i
+        $depth ||= 0 
+        $depth += ($aim || 0) * x[/\d+/].to_i
+      elsif x.include? "down"
+        $aim = ($aim || 0) + x[/\d+/].to_i
+      else
+        $aim = ($aim || 0) - x[/\d+/].to_i
+      end
+    end.map { |x| $horizontal * $depth }.first
+#+end_src                                                                              
+
+#+RESULTS:
+: 2015547716
