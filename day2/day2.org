@@ -45,7 +45,7 @@
       else
         $aim = ($aim || 0) - x[/\d+/].to_i
       end
-    end.map { |x| $horizontal * $depth }.first
+    end.inject { |x| $horizontal * $depth }
 #+end_src                                                                              
 
 #+RESULTS:
@@ -63,7 +63,7 @@
       else
         $aim = ($aim || 0) - x[/\d+/].to_i
       end
-    end.map { |x| $horizontal * $depth }.first
+    end.inject { |x| $horizontal * $depth }
 #+end_src                                                                              
 
 #+RESULTS:
