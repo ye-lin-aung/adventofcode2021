@@ -1,0 +1,33 @@
+* [Day 2] Dive
+** Org mode :noexport:
+   This is written in literate programming with org-babel and ruby. Reading this file won't help you to understand quickly. Please refers to the generated markdown file
+   
+** Part One
+*** Test data
+    
+#+begin_src ruby :exports both  :noweb yes
+  File.readlines("test.txt").group_by{ |x| (x.include?("up") || x.include?("down")) }.values.map{ |x| x.map{ |x|
+                                                                              if x.include?("up")
+                                                                                -(x[/\d+/].to_i)
+                                                                              else
+                                                                                x[/\d+/].to_i
+                                                                              end
+                                                                             }.sum }.inject(:*)
+#+end_src
+
+#+RESULTS:
+: 150
+
+*** Input data 
+#+begin_src ruby :exports both  :noweb yes
+  File.readlines("input.txt").group_by{ |x| (x.include?("up") || x.include?("down")) }.values.map{ |x| x.map{ |x|
+                                                                              if x.include?("up")
+                                                                                -(x[/\d+/].to_i)
+                                                                              else
+                                                                                x[/\d+/].to_i
+                                                                              end
+                                                                             }.sum }.inject(:*)
+#+end_src
+
+#+RESULTS:
+: 2036120

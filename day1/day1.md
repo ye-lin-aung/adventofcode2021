@@ -1,29 +1,23 @@
-- [[Day 1] Sonar Sweep](#org127aa58)
-  - [Increment counter](#org4a9597a)
-  - [Part One](#org0dd2e3f)
-    - [Test data](#org03145ed)
-    - [Input data](#org838369a)
-  - [Part Two](#org5e136d0)
-    - [Test data](#org0173799)
-    - [Input data](#org21310c1)
+- [[Day 1] Sonar Sweep](#orgeceae4d)
+  - [Part One](#org31ad38f)
+    - [Test data](#orgacb4055)
+    - [Input data](#org74c87ea)
+  - [Part Two](#org6c89597)
+    - [Test data](#orgc42eb76)
+    - [Input data](#orgbe706f5)
 
 
-<a id="org127aa58"></a>
+<a id="orgeceae4d"></a>
 
 # [Day 1] Sonar Sweep
 
 
-<a id="org4a9597a"></a>
-
-## Increment counter
-
-
-<a id="org0dd2e3f"></a>
+<a id="org31ad38f"></a>
 
 ## Part One
 
 
-<a id="org03145ed"></a>
+<a id="orgacb4055"></a>
 
 ### Test data
 
@@ -34,7 +28,7 @@
     Result: 7
 
 
-<a id="org838369a"></a>
+<a id="org74c87ea"></a>
 
 ### Input data
 
@@ -45,12 +39,12 @@
     Result: 1226
 
 
-<a id="org5e136d0"></a>
+<a id="org6c89597"></a>
 
 ## Part Two
 
 
-<a id="org0173799"></a>
+<a id="orgc42eb76"></a>
 
 ### Test data
 
@@ -63,7 +57,7 @@ end.each_cons(2).select{ |first, second| second > first }.map{ 1 }.sum}"
     Result: 5
 
 
-<a id="org21310c1"></a>
+<a id="orgbe706f5"></a>
 
 ### Input data
 
