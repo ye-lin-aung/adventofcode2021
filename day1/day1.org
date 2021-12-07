@@ -2,7 +2,7 @@
 ** Org mode :noexport:
    This is written in literate programming with org-babel and ruby. Reading this file won't help you to understand quickly. Please refers to the generated markdown file 
 
-** Part One
+** Part one
 *** Test data
    
     #+BEGIN_SRC ruby :exports both  :noweb yes
@@ -20,7 +20,7 @@
     #+RESULTS:
     : Result: 1226
     
-** Part Two
+** Part two
 *** Test data
    #+BEGIN_SRC ruby :exports both :noweb yes
      "Result: #{File.readlines('test.txt').map(&:to_i).each_cons(3).map do |first_num, second_num, third_num|

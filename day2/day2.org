@@ -2,7 +2,7 @@
 ** Org mode :noexport:
    This is written in literate programming with org-babel and ruby. Reading this file won't help you to understand quickly. Please refers to the generated markdown file
    
-** Part One
+** Part one
 *** Test data
     
 #+begin_src ruby :exports both  :noweb yes
@@ -31,3 +31,6 @@
 
 #+RESULTS:
 : 2036120
+
+** Part two
+*** Test data
